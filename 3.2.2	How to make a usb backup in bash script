@@ -1,0 +1,13 @@
+syspath="${sysdevpath%/dev}"
+devname="$(udevadm info -q name -p $syspath)"
+[[ "$devname" == "bus/"* ]] &
+eval "$(udevadm info -q property --export -p $syspath)"
+[[ -z "$ID_SERIAL" ]] && 
+if [[ "$devname" == *"sd"* ]] ; 
+echo  "Installed $devname "  
+if [[ "mount /dev/usb/sd"*" /media/selim" ]] ;  the
+echo "baglanıldı $devname "
+eval "$(sudo mount /dev/sdb1 /media/selim)"
+eval "$(sudo cp -a /media/selim/. /home/selim/Masaüstü/)"
+echo "The backup was taken."
+eval "$(sudo umount /media/usb)"        
