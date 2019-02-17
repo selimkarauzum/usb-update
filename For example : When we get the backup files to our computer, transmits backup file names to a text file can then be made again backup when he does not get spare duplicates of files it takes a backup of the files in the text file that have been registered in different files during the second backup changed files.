@@ -1,0 +1,7 @@
+#!/bin/sh
+Rsync –rnc –out-format=”%n” ‘/home /selim/masaüstü’ ’home/selim/masaüstü’>>text.txt
+Diff text.txt text1.txt >> deneme.txt
+Grep ‘>’ ‘/home/selim/masaüstü/deneme.txt’ >> d.txt
+While read –r line ; do 
+Cp –r /home/selim/${line:2:19} /home/selim/masaüstü/deneme
+Done <d.txt
